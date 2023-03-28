@@ -1,0 +1,56 @@
+p {
+  font-family: "Roboto";
+  margin: 0;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 450px);
+  grid-gap: 30px;
+}
+.movies {
+  padding: 20px;
+  width: fit-content;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  height: auto;
+  gap: 40px;
+}
+
+.card {
+  display: flex;
+  flex-direction: row;
+  height: 280px;
+  box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.2);
+  column-gap: 20px;
+}
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 10px;
+  padding-right: 20px;
+}
+
+.image-wrapper {
+  display: flex;
+}
+.title {
+  font-size: 20px;
+  font-weight: 600;
+}
+.date {
+  font-size: 14px;
+  color: #827e7e;
+}
+.overview {
+  font-size: 16px;
+  font-weight: 400;
+  overflow: hidden;
+}
+.overview-wrapper {
+  display: flex;
+  max-height: 150px;
+}
