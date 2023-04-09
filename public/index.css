@@ -5,7 +5,7 @@ p {
 
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(2, 450px);
+  grid-template-columns: repeat(2, 500px);
   grid-gap: 30px;
 }
 .movies {
@@ -20,9 +20,10 @@ p {
 }
 
 .card {
+  position: relative;
   display: flex;
   flex-direction: row;
-  height: 280px;
+  height: 295px;
   box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.2);
   column-gap: 20px;
 }
@@ -40,6 +41,7 @@ p {
 .title {
   font-size: 20px;
   font-weight: 600;
+  max-width: 210px;
 }
 .date {
   font-size: 14px;
@@ -52,5 +54,23 @@ p {
 }
 .overview-wrapper {
   display: flex;
-  max-height: 150px;
+  max-height: 115px;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+.progress-bar {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+.rating {
+  position: absolute;
+  right: 15px;
+  bottom: 12px;
+}
+.genres {
+  max-width: 200px;
+  row-gap: 10px;
 }
