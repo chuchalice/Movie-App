@@ -1,16 +1,17 @@
-p {
+p,
+div {
   font-family: "Roboto";
   margin: 0;
 }
 
 .wrapper {
   display: grid;
-  grid-template-columns: repeat(2, 500px);
+  grid-template-columns: repeat(2, auto);
   grid-gap: 30px;
 }
 .movies {
   padding: 20px;
-  width: fit-content;
+  width: 85vw;
   justify-content: center;
   display: flex;
   flex-direction: column;
@@ -24,19 +25,27 @@ p {
   display: flex;
   flex-direction: row;
   height: 295px;
-  box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.2);
   column-gap: 20px;
+  border-radius: 10px;
+  transition: 0.3s;
+  border: solid 1px #f0f0f0;
 }
+.card:hover {
+  box-shadow: 2px 2px 12px 0px rgba(0, 0, 0, 0.2);
+}
+
 .description {
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding-top: 10px;
   padding-right: 20px;
+  overflow: hidden;
 }
 
 .image-wrapper {
   display: flex;
+  /* max-width: 200px; */
 }
 .title {
   font-size: 20px;
@@ -47,30 +56,50 @@ p {
   font-size: 14px;
   color: #827e7e;
 }
-.overview {
-  font-size: 16px;
-  font-weight: 400;
-  overflow: hidden;
-}
+
 .overview-wrapper {
   display: flex;
   max-height: 115px;
+  font-size: 16px;
+  font-weight: 400;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  margin-right: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .pagination {
   display: flex;
   justify-content: center;
 }
-.progress-bar {
-  position: absolute;
-  top: 12px;
-  right: 12px;
-}
+
 .rating {
   position: absolute;
-  right: 15px;
+  left: 218px;
   bottom: 12px;
 }
 .genres {
   max-width: 200px;
   row-gap: 10px;
+}
+.image {
+  max-width: 200px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.description .title {
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  display: -webkit-box;
+  font-size: 22px;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }

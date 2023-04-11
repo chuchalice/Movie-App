@@ -30,6 +30,7 @@ export default class ApiService extends React.Component {
     const res = await this.getResource(`/genre/movie/list${this._token}`);
     return res;
   }
+  
   createGuestSession = async () => {
     const res = await this.getResource(
       `/authentication/guest_session/new${this._token}`

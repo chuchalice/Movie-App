@@ -36,15 +36,25 @@ export default class MovieItem extends React.Component {
           <img
             className="image"
             alt="aboba"
-            src={`${this._imgUrl}${poster_path}`}
+            src={poster_path ? `${this._imgUrl}${poster_path}` : 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/495px-No-Image-Placeholder.svg.png?20200912122019'}
           />
         </div>
         <div className="description">
+          <div className="title-wrapper">
           <p className="title">{title}</p>
+          <Progress
+          className="progress-bar"
+          size={40}
+          type="circle"
+          percent={Math.floor(vote_average * 10)}
+          format={(percent) => (percent / 10).toFixed(1)}
+          strokeColor={setProgressColor(vote_average)}
+        />
+          </div>
           <div className="genres">
             <MovieServiceConsumer>
-              {(genres) =>
-                genre_ids.map((el) => {
+              {(genres) => 
+                genre_ids.slice(0, 3).map((el) => {
                   let newEl = <Tag key={el.id}>Unknown</Tag>;
                   genres.forEach((genre) => {
                     if (el === genre.id) {
@@ -58,17 +68,10 @@ export default class MovieItem extends React.Component {
           </div>
           <p className="date">{date}</p>
           <div className="overview-wrapper">
-            <p className="overview">{overview}</p>
+          {overview}
           </div>
         </div>
-        <Progress
-          className="progress-bar"
-          size={40}
-          type="circle"
-          percent={Math.floor(vote_average * 10)}
-          format={(percent) => (percent / 10).toFixed(1)}
-          strokeColor={setProgressColor(vote_average)}
-        />
+       
         <Rate
           defaultValue={+sessionStorage.getItem(id) || 0}
           className="rating"
